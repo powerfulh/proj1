@@ -1,17 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>project</title>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="/fri/css/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<link rel="stylesheet" type="text/css" href="/cls/css/my.css">
+<link rel="stylesheet" type="text/css" href="/fri/css/cls.css">
+<link rel="stylesheet" type="text/css" href="/fri/css/my.css">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 <style>
@@ -111,19 +111,14 @@ div.dimension8{
     <!-- End Left Column -->
     </div>
     
-    <!-- Middle Column --> <!-- 작업할 곳 -->
+<!-- Middle Column --> <!-- 작업할 곳 -->
+
     <div class="w3-col m9">
-      
-      <div class="w3-container w3-card w3-round w3-margin-bottom w3-margin-left w3-margin-right clickable">
-		<!-- 이곳에 꿈과 희망을 펼치세요 -->
-		<div style="height:1000px">이 div는 테스트용이니 지우고 쓰세요</div>
-      </div>
-      
-      
-      
+      <div class="w3-container w3-card w3-round w3-margin-bottom w3-margin-left w3-margin-right">
+      <!-- 이곳에 꿈과 희망을 펼치세요 -->
+     	
     <!-- End Middle Column -->
     </div>
-    
     
   <!-- End Grid -->
   </div>
