@@ -12,8 +12,8 @@
 
 <c:redirect url="/main.fri" />
 
-
-
+ 
+<%-- 
 <!-- 이곳은 인덱스 입니다 수정전 팀원과 상의하세요 -->
 <div class="w3-container w3-content" style="max-width:1400px;margin-top:20px">
 	<div class="w3-col w3-card w3-margin-bottom w3-round">
@@ -186,7 +186,7 @@
 <footer class="w3-container w3-theme-d5">
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
- 
 
+--%>
 </body>
 </html>
