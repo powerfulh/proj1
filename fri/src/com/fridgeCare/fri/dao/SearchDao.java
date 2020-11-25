@@ -14,7 +14,7 @@ public class SearchDao {
 	PreparedStatement pstmt;
 	ResultSet rs;
 	SearchSQL sSQL;
-	
+	 
 	public SearchDao() {
 		db = new FriDBCP();
 		sSQL = new SearchSQL();
