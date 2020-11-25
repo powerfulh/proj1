@@ -139,8 +139,7 @@ div.dimension8{
         </div>
       </div>
       <br>
-      
-    
+
     <!-- End Left Column -->
     </div>
     
