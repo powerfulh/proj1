@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Statement;
 
 import db.FriDBCP;
@@ -27,6 +28,25 @@ public class MemberDao {
 		pstmt = db.getPSTMT(con, q);
 		try {
 			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			rs.next();
+			cnt = rs.getInt("cnt");
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			db.close(rs);
+			db.close(pstmt);
+			db.close(con);
+		}
+		return cnt;
+	}
+	public int getMailCnt(String mail) {
+		int cnt = 0;
+		con = db.getCon();
+		String q = sql.getSQL(sql.SEL_Mail_CNT);
+		pstmt = db.getPSTMT(con, q);
+		try {
+			pstmt.setString(1, mail);
 			rs = pstmt.executeQuery();
 			rs.next();
 			cnt = rs.getInt("cnt");
@@ -78,6 +98,44 @@ public class MemberDao {
 		}
 		return cnt;
 	}
+	public String getAvatarPname(String id) {
+		String pname = null;
+		con = db.getCon();
+		String q = sql.getSQL(sql.SEL_avt_byID);
+		pstmt = db.getPSTMT(con, q);
+		try {
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			rs.next();
+			pname = rs.getString("pname");
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			db.close(rs);
+			db.close(pstmt);
+			db.close(con);
+		}
+		return pname;
+	}
+	public String getThumbname(String id) {
+		String tname = null;
+		con = db.getCon();
+		String q = sql.getSQL(sql.SEL_Thumb_byID);
+		pstmt = db.getPSTMT(con, q);
+		try {
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			rs.next();
+			tname = rs.getString("tname");
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			db.close(rs);
+			db.close(pstmt);
+			db.close(con);
+		}
+		return tname;
+	}
 	public int addAvatar(String savename , String dir , long len) {
 		int cnt = 0;
 		con = db.getCon();
@@ -125,7 +183,10 @@ public class MemberDao {
 			pstmt.setString(7, TEL);
 			pstmt.setInt(8, AVT);
 			cnt = pstmt.executeUpdate();
-		}catch(Exception e) {
+		}catch(SQLIntegrityConstraintViolationException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		db.close(pstmt);

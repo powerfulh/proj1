@@ -13,7 +13,7 @@ public class Joinpage implements Caller {
 	@Override
 	public String exec(HttpServletRequest req, HttpServletResponse resp) {
 		req.setAttribute("isRedirect", false);
-		String view = "joinpage";
+		String view = "member/joinpage";
 		return view;
 	}
 

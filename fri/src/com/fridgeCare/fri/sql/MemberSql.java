@@ -5,6 +5,9 @@ public class MemberSql {
 	public final int SEL_pno = 1002;
 	public final int SEL_member = 1003;
 	public final int SEL_logincheck = 1004;
+	public final int SEL_avt_byID = 1005;
+	public final int SEL_Mail_CNT = 1006;
+	public final int SEL_Thumb_byID = 1007;
 	public final int Insert_AVATAR = 2001;
 	public final int Insert_Member = 2002;
 	public final int Insert_Thumb = 2003;
@@ -19,6 +22,14 @@ public class MemberSql {
 			buff.append("where ");
 			buff.append("id = ? ");
 			break;
+		case SEL_Mail_CNT:
+			buff.append("select ");
+			buff.append("count(*) cnt ");
+			buff.append("from ");
+			buff.append("member ");
+			buff.append("where ");
+			buff.append("mail = ? ");
+			break;
 		case SEL_logincheck:
 			buff.append("select ");
 			buff.append("count(*) cnt ");
@@ -32,6 +43,14 @@ public class MemberSql {
 			break;
 		case SEL_member:
 			buff.append("select * from member where id = ?");
+			break;
+		case SEL_avt_byID:
+			buff.append("select * from avatar where pno = ");
+			buff.append("(select avt from member where id = ?)");
+			break;
+		case SEL_Thumb_byID:
+			buff.append("select * from thumb where tmno = ");
+			buff.append("(select mno from member where id = ?)");
 			break;
 		case Insert_AVATAR:
 			buff.append("insert INTO avatar values( ");

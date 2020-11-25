@@ -12,7 +12,7 @@ public class Thumbnail {
 	String path , ext;
 	File f , t;
 	int index;
-	String savepath = "C:/Users/hanho/Desktop/jsp/increpas4Team/fridgeCare/WebContent/WEB-INF/resources/thumb";
+	String savepath = "D:/class/project1/git/proj1/fri/WebContent/WEB-INF/resources/img/avatar";
 	public Thumbnail(String filewhere) {
 		path = filewhere;
 		index = path.lastIndexOf(".");

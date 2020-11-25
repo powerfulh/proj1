@@ -18,7 +18,7 @@ public class LoginCheck implements Caller {
 		int cnt = dao.getIdCnt(parameter1, parameter2);
 		if(cnt == 0) {
 			System.out.println("login fail");
-			view = "/fri/?fail";
+			view = "/fri/main.fri?fail";
 		}else {
 			System.out.println("login success");
 			req.getSession().setAttribute("SID", parameter1);
