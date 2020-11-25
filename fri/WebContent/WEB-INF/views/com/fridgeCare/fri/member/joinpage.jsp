@@ -11,7 +11,6 @@
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<link rel="stylesheet" type="text/css" href="/cls/css/my.css">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 <script type="text/javascript" src="/fri/js/joinpage.js"></script>
@@ -65,23 +64,13 @@ body{
 <!-- Page Container -->
 <div class="w3-container w3-content" style="max-width:1400px;margin-top:20px; min-width:800px;">    
 	<div class="w3-col w3-card w3-margin-bottom w3-round">
-		<h1><a href="/increpas4team/">냉장고를 부탁해!</a></h1>
+		<h1><a href="/fri/main.fri">냉장고를 부탁해!</a></h1>
 	</div>
   <!-- The Grid -->
   <div class="w3-row">
     <!-- Left Column -->
     <div class="w3-col m3">
       <!-- Profile -->
-      <div class="w3-card w3-round w3-white w3-hide">
-        <div class="w3-container">
-         <h4 class="w3-center">My Profile</h4>
-         <p class="w3-center"><img src="/cls/img/avatar/m3.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
-         <hr>
-         <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> ID</p>
-         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> Loc</p>
-         <p class="w3-btn w3-border w3-hover-blue change05bgc"><i class="fa fa-edit fa-fw w3-margin-right w3-text-theme"></i> edit</p>
-        </div>
-      </div>
       <br>
       
       <!-- Accordion -->
@@ -107,7 +96,7 @@ body{
     <!-- Middle Column --> <!-- 작업할 곳 -->
     <div class="w3-col m9" style="min-width:700px">
       
-      <form class="w3-container w3-card w3-round w3-margin-bottom w3-margin-left w3-margin-right w3-padding" method="post" action="/increpas4team/joinproc.fri" encType="multipart/form-data">
+      <form class="w3-container w3-card w3-round w3-margin-bottom w3-margin-left w3-margin-right w3-padding" method="post" action="/fri/joinproc.fri" encType="multipart/form-data">
 		<div class="w3-col m10 w3-margin-left" style="min-width:660px">
 			<div class="dimension1 w3-padding floatleft w3-right-align">ID</div>
 			<input name="inputid" class="floatleft dimension1" id="inputid" required>
@@ -136,7 +125,8 @@ body{
 		</div>
 		<div class="w3-col m10 w3-margin-left" style="min-width:660px">
 			<div class="dimension1 w3-padding floatleft w3-right-align">이메일</div>
-			<input name="inputmail" class="floatleft dimension1" required>
+			<input name="inputmail" class="floatleft dimension1" required id="inputmail">
+			<div class="w3-light-blue w3-round-large w3-center w3-padding-small w3-button w3-hover-cyan change05bgc margin8" id="mailcheckbtn">중복확인</div>
 			<div class="w3-padding floatleft w3-right-align"></div>
 		</div>
 		<div class="w3-col m10 w3-margin-left" style="min-width:660px">

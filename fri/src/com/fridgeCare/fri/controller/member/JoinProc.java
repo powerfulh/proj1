@@ -43,7 +43,7 @@ public class JoinProc implements Caller {
 		try {
 			long len = f.length();
 			parameter8 = multi.getFilesystemName("inputavt");
-			avtno = dao.addAvatar(parameter8, "/WEB-INF/resources/avt", len);
+			avtno = dao.addAvatar(parameter8, f.getPath(), len);
 			Thumbnail maker = new Thumbnail(f.getPath());
 			t = maker.make(100, 100);
 			tname = t.getName();
