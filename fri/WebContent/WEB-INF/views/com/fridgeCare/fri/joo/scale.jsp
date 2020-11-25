@@ -5,12 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>project</title>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="/fri/css/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<link rel="stylesheet" type="text/css" href="/cls/css/my.css">
+<link rel="stylesheet" type="text/css" href="/fri/css/cls.css">
+<link rel="stylesheet" type="text/css" href="/fri/css/my.css">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 <style>
@@ -110,19 +111,77 @@ div.dimension8{
     <!-- End Left Column -->
     </div>
     
-    <!-- Middle Column --> <!-- 작업할 곳 -->
+<!-- Middle Column --> <!-- 작업할 곳 -->
+
     <div class="w3-col m9">
-      
-      <div class="w3-container w3-card w3-round w3-margin-bottom w3-margin-left w3-margin-right clickable">
-		<!-- 이곳에 꿈과 희망을 펼치세요 -->
-		<div style="height:1000px">이 div는 테스트용이니 지우고 쓰세요</div>
-      </div>
-      
-      
-      
+      <div class="w3-container w3-card w3-round w3-margin-bottom w3-margin-left w3-margin-right">
+      <!-- 이곳에 꿈과 희망을 펼치세요 -->
+     	 <div class="w3-content w3-center w3-indigo w3-card-4">
+    	     <h1 class="w3-padding w3-margin-top w3-center">냉장고를 부탁해</h1>
+    	  </div>
+      <form class="m6 w3-col w3-padding w3-margin-bottom" id="frm" name="frm">
+            <label for="name" class="w3-col w3-left-align w3-padding txt16 clsbold">요 리 이 름 : </label>
+                  <input type="text" class="w3-input w3-border w3-padding" id="name" name="name" placeholder="내용을 입력하세요!">
+            <label for="cate" class="w3-col w3-left-align w3-padding txt16 clsbold">요 리 종 류 : </label>
+               <select name="cate" id="cate" >
+                  <option value="#" selected>선택
+                  <option value="한식">한식
+                  <option value="중식">중식
+                  <option value="일식">일식
+                  <option value="양식">양식
+                  <option value="퓨전">퓨전
+               </select> <br>
+            <label for="time" class="w3-col w3-left-align w3-padding txt16 clsbold">소 요 시 간 : </label>
+               <select name="time" id="time" >
+                  <option value="5~15분">5~15분
+                  <option value="15~25분">15~25분
+                  <option value="25~45분">25~45분
+                  <option value="45~60분">45~60분
+                  <option value="한시간 이상">한시간 이상
+               </select>
+         </form>
+         <form>
+         	<div class="m3 w3-margin w3-padding">
+	     		<img src="#" class="w3-border" style="height: 218px; width: 350px;" >
+	     	</div>
+         </form>
+	     <form class="w3-col w3-padding w3-margin-top">
+	     	<div class="w3-col w3-margin-top"> 
+	     		<div class="w3-col">
+		    		<label for="name" class="w3-col l4 m12 s12 w3-left-align w3-padding txt16 clsbold">필 수 재 료 : </label>
+	     		</div>
+	     		<div class="w3-col">
+		        	<div class="w3-col m5 w3-padding">
+		            	<input type="text" class="w3-col w3-border w3-margin w3-padding" placeholder="예) 소고기, 돼지고기...">
+		            	<input type="text" class="w3-col w3-border w3-margin w3-padding" placeholder="......">
+		            	<input type="text" class="w3-col w3-border w3-margin w3-padding" placeholder="......">
+		            	<input type="button" class="w3-center m2" value=" + 항목추가">
+		            </div>
+	    	     	<div class="w3-col m7 w3-padding">
+		    	 		<div class="">
+		    	 			<video src="#" class="w3-col w3-border" style="height: 218px;">joo</video>
+		    	 		</div>
+		    	 	</div>
+	     		</div>
+         	</div>
+       	</form>
+       	<form class="w3-col w3-padding w3-margin-top">
+	     	<div class="w3-col w3-margin-top"> 
+	     		<div class="w3-col">
+		    		<label for="name" class="w3-col l4 m12 s12 w3-left-align w3-padding txt16 clsbold">조 리 과 정: </label>
+	     		</div>
+	     		<div class="w3-col m4">
+	     			<img src="#" class="w3-border w3-margin-bottom" style="height: 200px; width: 200px;" >
+	     		</div>
+	     		<div class="w3-col m8">
+					<textarea class="w3-col w3-border w3-input w3-margin-bottom" rows="8" placeholder="조리과정 설명" style="overflow: auto; resize: none;"></textarea>
+	     		</div>
+	     	</div>
+	     </form>
+       	
+    </div>
     <!-- End Middle Column -->
     </div>
-    
     
   <!-- End Grid -->
   </div>
