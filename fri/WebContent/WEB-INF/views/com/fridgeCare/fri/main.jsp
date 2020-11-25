@@ -80,7 +80,7 @@ body{
 	      <div class="w3-card w3-round w3-white">
 	        <div class="w3-container">
 	         <h4 class="w3-center">My Profile</h4>
-	         <p class="w3-center"><img src="/fri/avatar/${AVT}" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+	         <p class="w3-center"><img src="/fri/img/avatar/${AVT}" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
 	         <hr>
 	         <p><i class="fa fa-id-badge fa-fw w3-margin-right w3-text-theme"></i>${SID}</p>
 	         
@@ -167,14 +167,14 @@ body{
     <div class="w3-col m7">
       
       <form class="w3-container w3-card w3-round w3-margin-bottom w3-margin-left w3-margin-right clickable latelyuploadbtn" method="get" action="/fri/resipiPage.fri"><br>
-        <img src="/cls/img/avatar/m3.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
-        <span class="w3-right w3-opacity">1 min</span>
-        <h4>레시피 이름</h4><br>
+        <img src="/fri/img/avatar/${LUVO.tname}" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+        <span class="w3-right w3-opacity">${LUVO.sdate}</span>
+        <h4>${LUVO.title}</h4><br>
         <hr class="w3-clear">
-        <p>유저 아이디</p>
+        <p>${LUVO.id}</p>
           <div class="w3-row-padding" style="margin:0 -16px">
             <div class="w3-col">
-              <img src="/cls/img/avatar/m3.png" style="width:100%" alt="thumbsnail" class="w3-margin-bottom">
+              <img src="/fri/img/boardfirstimg/${LUVO.savename}" style="width:100%" alt="thumbsnail" class="w3-margin-bottom">
             </div>
         </div>
       </form>
