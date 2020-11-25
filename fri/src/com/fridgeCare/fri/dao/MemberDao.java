@@ -9,6 +9,7 @@ import java.sql.Statement;
 
 import db.FriDBCP;
 import com.fridgeCare.fri.sql.MemberSql;
+import com.fridgeCare.fri.vo.LatelyUploadVO;
 
 public class MemberDao {
 	FriDBCP db;
@@ -20,6 +21,29 @@ public class MemberDao {
 	public MemberDao() {
 		db = new FriDBCP();
 		sql = new MemberSql();
+	}
+	public LatelyUploadVO getLUVO() {
+		LatelyUploadVO vo = new LatelyUploadVO();
+		con = db.getCon();
+		String q = sql.getSQL(sql.SEL_LatelyUpload);
+		try {
+			stmt = con.createStatement();
+			rs= stmt.executeQuery(q);
+			rs.next();
+			vo.setBno(rs.getInt("bno"));
+			vo.setId(rs.getString("id"));
+			vo.setSavename(rs.getString("savename"));
+			vo.setTitle(rs.getString("title"));
+			vo.setTname(rs.getString("tname"));
+			vo.setWdate(rs.getDate("wdate"));
+			vo.setWtime(rs.getTime("wdate"));
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		db.close(rs);
+		db.close(stmt);
+		db.close(con);
+		return vo;
 	}
 	public int getIdCnt(String id) {
 		int cnt = 0;

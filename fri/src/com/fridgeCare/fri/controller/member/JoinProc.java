@@ -44,7 +44,7 @@ public class JoinProc implements Caller {
 			long len = f.length();
 			parameter8 = multi.getFilesystemName("inputavt");
 			avtno = dao.addAvatar(parameter8, f.getPath(), len);
-			Thumbnail maker = new Thumbnail(f.getPath());
+			Thumbnail maker = new Thumbnail(f.getPath() , 0);
 			t = maker.make(100, 100);
 			tname = t.getName();
 		}catch(NullPointerException e) {

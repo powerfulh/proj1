@@ -13,7 +13,12 @@ public class Thumbnail {
 	File f , t;
 	int index;
 	String savepath = "D:/class/project1/git/proj1/fri/WebContent/WEB-INF/resources/img/avatar";
-	public Thumbnail(String filewhere) {
+	public Thumbnail(String filewhere , int Thumbnail_category) {
+		//1을 넣어주면 게시판용 썸네일을 만들겠다는 뜻이고 그외의 숫자를 넣으면 프사용 썸네일을 만들겠다는 뜻
+		//따라서 주현이형은 무조건 1넣어서 써야됨
+		if(Thumbnail_category == 1) {
+			savepath = "D:/class/project1/git/proj1/fri/WebContent/WEB-INF/resources/img/boardThumb";
+		}
 		path = filewhere;
 		index = path.lastIndexOf(".");
 		ext = path.substring(index+1);

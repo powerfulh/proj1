@@ -8,6 +8,7 @@ public class MemberSql {
 	public final int SEL_avt_byID = 1005;
 	public final int SEL_Mail_CNT = 1006;
 	public final int SEL_Thumb_byID = 1007;
+	public final int SEL_LatelyUpload = 1008;
 	public final int Insert_AVATAR = 2001;
 	public final int Insert_Member = 2002;
 	public final int Insert_Thumb = 2003;
@@ -51,6 +52,13 @@ public class MemberSql {
 		case SEL_Thumb_byID:
 			buff.append("select * from thumb where tmno = ");
 			buff.append("(select mno from member where id = ?)");
+			break;
+		case SEL_LatelyUpload:
+			buff.append("select bno , board.title , board.wdate , member.id , thumb.tname , image.savename ");
+			buff.append("from board , member , thumb , image ");
+			buff.append("where member.mno = board.wmno and ");
+			buff.append("thumb.tmno = member.mno and board.bno = image.imgbno ");
+			buff.append("order by board.bno desc");
 			break;
 		case Insert_AVATAR:
 			buff.append("insert INTO avatar values( ");
