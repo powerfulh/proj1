@@ -9,7 +9,7 @@ public class RecipeAdd implements Caller {
 
 	@Override
 	public String exec(HttpServletRequest req, HttpServletResponse resp) {
-		String view = "joo/scale";
+		String view = "joo/recipeAdd";
 		return view;
 	}
 
