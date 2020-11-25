@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<Context>
+	<Resource name="jdbc/fridgeDB"
+		auth="Container" 
+		type="javax.sql.DataSource"
+		maxTotal="100"
+		maxWaitMillis="10000"
+		username="scott" password="tiger"
+		driverClassName="oracle.jdbc.driver.OracleDriver"
+		url="jdbc:oracle:thin:@localhost:1521:orcl">
+	</Resource>
+</Context>
