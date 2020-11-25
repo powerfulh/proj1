@@ -143,6 +143,7 @@ div.dimension8{
     <!-- End Left Column -->
     </div>
     
+    
     <!-- Middle Column -->
     <div class="w3-col m7 w3-margin-left">
 		<div class="w3-col w3-center">
