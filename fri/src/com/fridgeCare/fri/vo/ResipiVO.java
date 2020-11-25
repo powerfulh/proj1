@@ -5,10 +5,18 @@ import java.sql.Time;
 import java.text.SimpleDateFormat;
 
 public class ResipiVO {
-	private int time, lcount, cnt;
+	private int time, lcount, cnt, bno;
 	private String rname, dir, video, sdate, body, savename, name, id, rdate;
 	private Date wdate, rwdate;
 	private Time wtime, rwtime;
+	
+	public int getBno() {
+		return bno;
+	}
+
+	public void setBno(int bno) {
+		this.bno = bno;
+	}
 
 	public String getName() {
 		return name;

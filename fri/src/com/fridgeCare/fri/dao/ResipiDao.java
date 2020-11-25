@@ -4,7 +4,6 @@ import java.sql.*;
 import java.util.*;
 
 import db.*;
-//import com.fridgeCare.fri.dao.*;
 import com.fridgeCare.fri.vo.*;
 import com.fridgeCare.fri.sql.*;
 import com.fridgeCare.fri.util.PageUtil;
@@ -35,6 +34,7 @@ public class ResipiDao {
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
+				rVO.setBno(rs.getInt("bno"));
 				rVO.setRname(rs.getString("rname"));
 				rVO.setVideo(rs.getString("video"));
 				rVO.setDir(rs.getString("dir"));
@@ -179,5 +179,77 @@ public class ResipiDao {
 			db.close(con);
 		}
 		return cnt;
+	}
+	
+	// 선택 재료로 가능한 레시피 불러오기 전담 처리 함수
+	public ArrayList<ResipiVO> getOther(String ingred){
+		ArrayList<ResipiVO> list = new ArrayList<ResipiVO>();
+		con = db.getCon();
+		String sql = rSQL.getSQL(rSQL.SEL_OTHER_INFO);
+		pstmt = db.getPSTMT(con, sql);
+		try {
+			System.out.println(ingred);
+			pstmt.setString(1, ingred);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				System.out.println("list 사이즈 : " + list.size());
+				ResipiVO rVO = new ResipiVO();
+				
+				rVO.setDir(rs.getString("dir"));
+				rVO.setName(rs.getString("rname"));
+				rVO.setBno(rs.getInt("bno"));
+				System.out.println("bno 값 : " + rVO.getBno());
+				
+				list.add(rVO);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(rs);
+			db.close(pstmt);
+			db.close(con);
+		}
+		return list;
+	}
+	
+	public int getLikeCnt(int bno) {
+		int cnt = 0;
+		con =db.getCon();
+		String sql = rSQL.getSQL(rSQL.ADD_LIKE_COUNT);
+		pstmt = db.getPSTMT(con, sql);
+		try {
+			pstmt.setInt(1, bno);
+			
+			cnt = pstmt.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(pstmt);
+			db.close(con);
+		}
+		return cnt;
+	}
+	
+	// 리뷰 저장 전담 처리 함수
+	public void getReplyCnt(int bno, String reply, int mno) {
+		int cnt = 0;
+		con = db.getCon();
+		String sql = rSQL.getSQL(rSQL.ADD_REPLY_BODY);
+		pstmt = db.getPSTMT(con, sql);
+		try {
+			pstmt.setInt(1, bno);
+			pstmt.setString(2, reply);
+			pstmt.setInt(3, mno);
+			
+			cnt = pstmt.executeUpdate();
+			System.out.println("댓글 작성 여부 : " + cnt);
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(pstmt);
+			db.close(con);
+		}
 	}
 }
