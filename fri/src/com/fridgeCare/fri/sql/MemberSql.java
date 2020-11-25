@@ -9,6 +9,8 @@ public class MemberSql {
 	public final int SEL_Mail_CNT = 1006;
 	public final int SEL_Thumb_byID = 1007;
 	public final int SEL_LatelyUpload = 1008;
+	public final int SEL_Week = 1009;
+	public final int SEL_Month = 1010;
 	public final int Insert_AVATAR = 2001;
 	public final int Insert_Member = 2002;
 	public final int Insert_Thumb = 2003;
@@ -59,6 +61,20 @@ public class MemberSql {
 			buff.append("where member.mno = board.wmno and ");
 			buff.append("thumb.tmno = member.mno and board.bno = image.imgbno ");
 			buff.append("order by board.bno desc");
+			break;
+		case SEL_Week:
+			buff.append("select tname , title , bno , id ");
+			buff.append("from thumb , board , member ");
+			buff.append("where tmno is null and board.imgno = tno and ");
+			buff.append("member.mno = board.wmno and ");
+			buff.append("wdate between sysdate-7 and sysdate order by lcount desc");
+			break;
+		case SEL_Month:
+			buff.append("select tname , title , bno , id ");
+			buff.append("from thumb , board , member ");
+			buff.append("where tmno is null and board.imgno = tno and ");
+			buff.append("member.mno = board.wmno and ");
+			buff.append("wdate between sysdate-30 and sysdate order by lcount desc");
 			break;
 		case Insert_AVATAR:
 			buff.append("insert INTO avatar values( ");

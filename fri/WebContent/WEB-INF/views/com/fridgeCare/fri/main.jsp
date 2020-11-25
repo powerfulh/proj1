@@ -62,6 +62,9 @@ body{
 .inline{
 	display:inline-block;
 }
+.change05bgc{
+	transition: background-color .5s;
+}
 </style>
 </head>
 <body class="">
@@ -115,40 +118,34 @@ body{
       <!-- Accordion -->
       <div class="w3-round">
 		<div class="w3-blue w3-round-large w3-center dimension7 w3-padding w3-margin-top">My refri</div>
-		<form action="/fri/selectIngredient.fri" method="get">
+		<form action="/fri/search.fri" method="get">
 			<input type="hidden" name="catagory" value="한">
 			<input class="w3-gray w3-round-large w3-center dimension3 w3-padding-small inline w3-button w3-hover-cyan change05bgc" type="submit" value="한식">
 		</form>
-		<form action="/fri/selectIngredient.fri" method="get">
+		<form action="/fri/search.fri" method="get">
 			<input type="hidden" name="catagory" value="중">
 			<input class="w3-gray w3-round-large w3-center dimension3 w3-padding-small inline w3-button w3-hover-cyan change05bgc" type="submit" value="중식">
 		</form>
-		<form action="/fri/selectIngredient.fri" method="get">
+		<form action="/fri/search.fri" method="get">
 			<input type="hidden" name="catagory" value="일">
 			<input class="w3-gray w3-round-large w3-center dimension3 w3-padding-small inline w3-button w3-hover-cyan change05bgc" type="submit" value="일식">
 		</form>
-		<form action="/fri/selectIngredient.fri" method="get">
+		<form action="/fri/search.fri" method="get">
 			<input type="hidden" name="catagory" value="양">
 			<input class="w3-gray w3-round-large w3-center dimension3 w3-padding-small inline w3-button w3-hover-cyan change05bgc" type="submit" value="양식">
 		</form>
-		<form action="/fri/selectIngredient.fri" method="get">
+		<form action="/fri/search.fri" method="get">
 			<input type="hidden" name="catagory" value="퓨">
 			<input class="w3-gray w3-round-large w3-center dimension3 w3-padding-small inline w3-button w3-hover-cyan change05bgc" type="submit" value="퓨전">
 		</form>
 		<c:if test="${not empty SID}">
 			<div class="w3-blue w3-round-large w3-center dimension7 w3-padding w3-margin-top">Our refri</div>
-			<form action="/fri/미정" method="get">
-				<input type="hidden" name="loginid" value="${SID}">
+			<form action="/fri/recipeAdd.fri" method="get">
 				<input class="w3-gray w3-round-large w3-center dimension3 w3-padding-small inline w3-button w3-hover-cyan change05bgc" type="submit" value="내 레시피 작성">
 			</form>
 		</c:if>
 		<div class="w3-blue w3-round-large w3-center dimension7 w3-padding w3-margin-top">HQ refri</div>
-		<form action="/fri/미정" method="get">
-			<input type="hidden" name="loginid" value="${SID}">
-			<input class="w3-gray w3-round-large w3-center dimension3 w3-padding-small inline w3-button w3-hover-cyan change05bgc" type="submit" value="파트너 회원 신청">
-		</form>
-		<form action="/fri/미정" method="get">
-			<input type="hidden" name="loginid" value="${SID}">
+		<form action="/fri/partnerboard.fri" method="get">
 			<input class="w3-gray w3-round-large w3-center dimension3 w3-padding-small inline w3-button w3-hover-cyan change05bgc" type="submit" value="파트너 레시피 보기">
 		</form>
 		<div class="w3-teal w3-round-large w3-center dimension7 w3-padding w3-margin-top w3-button w3-hover-cyan change05bgc">Feedback / Q &amp; A</div>
@@ -167,6 +164,7 @@ body{
     <div class="w3-col m7">
       
       <form class="w3-container w3-card w3-round w3-margin-bottom w3-margin-left w3-margin-right clickable latelyuploadbtn" method="get" action="/fri/resipiPage.fri"><br>
+      	<input type="hidden" name="bno" value="${LUVO.bno}">
         <img src="/fri/img/avatar/${LUVO.tname}" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
         <span class="w3-right w3-opacity">${LUVO.sdate}</span>
         <h4>${LUVO.title}</h4><br>
@@ -186,27 +184,28 @@ body{
     
     <!-- Right Column -->
     <div class="w3-col m2">
-      <div class="w3-card w3-round w3-white w3-center">
-        <div class="w3-container">
-          <p>주간</p>
-          <img src="/cls/img/avatar/m3.png" alt="Forest" style="width:100%;">
-          <p><strong>제목</strong></p>
-          <p>유저아이디</p>
-          <p><button class="w3-button w3-block w3-theme-l4">보러가기</button></p>
-        </div>
+      <div class="w3-card w3-round w3-white w3-center w3-light-gray">
+        <form class="w3-container w3-btn w3-white" method="get" action="/fri/resipiPage.fri">
+        	<input type="hidden" name="bno" value="${WVO.bno}">
+          <p>주간 인기 레시피</p>
+          <img src="/fri/img/boardThumb/${WVO.tname}" alt="Thumb" style="width:100%;">
+          <p><strong>${WVO.title}</strong></p>
+          <p>${WVO.id}</p>
+        </form>
       </div>
       <br>
       
-      <div class="w3-card w3-round w3-white w3-center">
-        <div class="w3-container">
-          <p>월간</p>
-          <img src="/cls/img/avatar/m3.png" alt="Forest" style="width:100%;">
-          <p><strong>제목</strong></p>
-          <p>유저아이디</p>
-          <p><button class="w3-button w3-block w3-theme-l4">보러가기</button></p>
-        </div>
+      <div class="w3-card w3-round w3-white w3-center w3-light-gray">
+        <form class="w3-container w3-btn w3-white" method="get" action="/fri/resipiPage.fri">
+        	<input type="hidden" name="bno" value="${MVO.bno}">
+          <p>월간 인기 레시피</p>
+          <img src="/fri/img/boardThumb/${MVO.tname}" alt="Thumb" style="width:100%;">
+          <p><strong>${MVO.title}</strong></p>
+          <p>${MVO.id}</p>
+        </form>
       </div>
       <br>
+      
       
       <div class="w3-card w3-round w3-white dimension1">
         <div class="w3-container">

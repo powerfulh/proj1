@@ -10,6 +10,7 @@ import java.sql.Statement;
 import db.FriDBCP;
 import com.fridgeCare.fri.sql.MemberSql;
 import com.fridgeCare.fri.vo.LatelyUploadVO;
+import com.fridgeCare.fri.vo.WeekVO;
 
 public class MemberDao {
 	FriDBCP db;
@@ -37,6 +38,46 @@ public class MemberDao {
 			vo.setTname(rs.getString("tname"));
 			vo.setWdate(rs.getDate("wdate"));
 			vo.setWtime(rs.getTime("wdate"));
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		db.close(rs);
+		db.close(stmt);
+		db.close(con);
+		return vo;
+	}
+	public WeekVO getWVO() {
+		WeekVO vo = new WeekVO();
+		con = db.getCon();
+		String q = sql.getSQL(sql.SEL_Week);
+		try {
+			stmt = con.createStatement();
+			rs= stmt.executeQuery(q);
+			rs.next();
+			vo.setBno(rs.getInt("bno"));
+			vo.setId(rs.getString("id"));
+			vo.setTitle(rs.getString("title"));
+			vo.setTname(rs.getString("tname"));
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		db.close(rs);
+		db.close(stmt);
+		db.close(con);
+		return vo;
+	}
+	public WeekVO getMVO() {
+		WeekVO vo = new WeekVO();
+		con = db.getCon();
+		String q = sql.getSQL(sql.SEL_Month);
+		try {
+			stmt = con.createStatement();
+			rs= stmt.executeQuery(q);
+			rs.next();
+			vo.setBno(rs.getInt("bno"));
+			vo.setId(rs.getString("id"));
+			vo.setTitle(rs.getString("title"));
+			vo.setTname(rs.getString("tname"));
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
