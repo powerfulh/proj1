@@ -4,9 +4,9 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 
 
-public class searchVO {
-	private int ino, iname, lcount, bno, wmno, tno;
-	private String category, imgdir, title, tname, tmno, thumdir, rdate;
+public class SearchVO {
+	private int ino,  lcount, bno, wmno, tno;
+	private String iname, category, imgdir, title, tname, tmno, thumdir, rdate;
 	private Date wdate;
 	public int getIno() {
 		return ino;
@@ -14,10 +14,10 @@ public class searchVO {
 	public void setIno(int ino) {
 		this.ino = ino;
 	}
-	public int getIname() {
+	public String getIname() {
 		return iname;
 	}
-	public void setIname(int iname) {
+	public void setIname(String iname) {
 		this.iname = iname;
 	}
 	public int getLcount() {
