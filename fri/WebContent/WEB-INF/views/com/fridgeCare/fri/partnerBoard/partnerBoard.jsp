@@ -41,6 +41,27 @@ div.dimension8{
 .inline{
 	display:inline-block;
 }
+
+span.inactivepage{
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+	transition: background-color .5s;
+	border: 1px solid #ddd;
+}
+span.inactivepage:hover{
+	background-color: yellow;
+}
+span.activepage{
+	float: left;
+	padding: 8px 16px;
+	background-color: green;
+	color: white;
+	border: 1px solid #4CAF50;
+}
+.change05bgc{
+	transition: background-color .5s;
+}
 </style>
 </head>
 <body class="">
@@ -140,7 +161,22 @@ div.dimension8{
       		</c:forEach>
       	</div>
       
-      
+      <form method="get" action="/fri/partnerBoard.fri" class="w3-margin inline" id="pageform">
+		<input type="hidden" name="nowPage" id="whatpage">
+		<span class="w3-hide" id="lastpagesave">${pagination.pagecount}</span>
+		<span class="w3-btn inactivepage" id="firstpagebtn">&laquo;</span>
+		<c:forEach var="page" items="${pagelist}">
+			<c:choose>
+				<c:when test="${page == pagination.presentpage}">
+					<span class="activepage">${page}</span>
+				</c:when>
+				<c:when test="${page != pagination.presentpage}">
+					<span class="pagebtn w3-btn inactivepage">${page}</span>
+				</c:when>
+			</c:choose>
+		</c:forEach>
+		<span class="w3-btn inactivepage" id="lastpagebtn">&raquo;</span>
+	</form>
       
     <!-- End Middle Column -->
     </div>

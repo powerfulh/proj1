@@ -26,4 +26,17 @@ $(document).ready(function(){
 	$('#rbtn').click(function(){
 		$('#rfrm').submit();
 	});
+	
+	$('#firstpagebtn').click(function(){
+		$('#whatpage').attr('value' , '1');
+		$('#pageform').submit();
+	});
+	$('#lastpagebtn').click(function(){
+		$('#whatpage').attr('value' , $('#lastpagesave').html());
+		$('#pageform').submit();
+	});
+	$('.pagebtn').click(function(){
+		$('#whatpage').attr('value' , $(this).html());
+		$('#pageform').submit();
+	});
 });
