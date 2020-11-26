@@ -17,15 +17,10 @@ public class ResipiPage implements Caller {
 		ResipiVO rVO = new ResipiVO();
 		ArrayList<ResipiVO> list = new ArrayList<ResipiVO>();
 		
-		/*
-		String wbno = req.getParameter("bno"); 
-		int bno = Integer.parseInt(wbno); 
-		if(wbno == null) {
-		}
-		 */
 	 	
-		int bno = 1001;
-		System.out.println(bno);
+		String wbno = req.getParameter("bno");
+		int bno = Integer.parseInt(wbno);
+		System.out.println("넘어온 bno : "+bno);
 		
 		rVO = rDao.getResipi(bno);
 		System.out.println(rVO.getVideo());

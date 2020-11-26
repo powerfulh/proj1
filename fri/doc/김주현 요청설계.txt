@@ -1,0 +1,35 @@
+레시피 설명 페이지 요청
+요청주소 : /fri/resipiPage.fri
+파라미터 : bno
+컨트롤러 : com.fridgeCare.fri.controller.recipe.ResipiPage
+뷰 : /WEB-INF/views/com/fridgeCare/fri/recipe/resipiPage.jsp
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+레시피 추천 증가 페이지 요청
+요청주소 : /fri/resipiLikeCount.fri
+파라미터 : x
+컨트롤러 : com.fridgeCare.fri.controller.recipe.ResipiLikeCount
+뷰 : redirect ] /fri/resipiPage.fri
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+레시피 리뷰 작성 페이지 요청
+요청주소 : /fri/resipiWrite.fri
+파라미터 : body
+컨트롤러 : com.fridgeCare.fri.controller.recipe.ResipiWrite
+뷰 : redirect ] /fri/resipiPage.fri
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+파트너 레시피 게시판 페이지 요청
+요청주소 : /fri/partnerBoard.fri
+파라미터 : 
+컨트롤러 :com.fridgeCare.fri.controller.partnerBoard.PartnerBoard
+뷰 : /WEB-INF/views/com/fridgeCare/fri/partnerBoard/partnerBoard.jsp
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+파트너 레시피 게시판 페이지 요청
+요청주소 : /fri/partnerBoard.fri
+파라미터 : 
+컨트롤러 :com.fridgeCare.fri.controller.partnerBoard.PartnerBoard
+뷰 : /WEB-INF/views/com/fridgeCare/fri/partnerBoard/partnerBoard.jsp
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
