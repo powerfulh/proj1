@@ -88,25 +88,6 @@ ul li{
 	var num = $("#big_sort").find('button');
 	var cartAr;
 	$(function() {
-		$("Iname1").on("click", function() {
-			for(int x =0; x<num.length(); x++){
-				$('asd1').show();
-				$('asd2').hide();
-				$('asd3').hide();
-				$('asd4').hide();
-				$('asd5').hide();
-				$('asd6').hide();
-			}
-		});
-		$("Iname2").on("click", function() {
-			$('asd1').hide();
-			$('asd2').show();
-			$('asd3').hide();
-			$('asd4').hide();
-			$('asd5').hide();
-			$('asd6').hide();
-		});
-		
 		$("#cart").html().append("<li>강냉이<img src='')></li>")
 		cartAr[] = '강냉이'
 	});
@@ -198,10 +179,10 @@ ul li{
 					
 					<!-- 선택가능한 재료 띄워주는 곳 -->
 					<div class="small_sort" style="width: 42%; margin: 20px; display: inline-block; height: 600px; float:left;">
-						<h2>선택 가능한 재료</h2>
+						<h3>선택 가능한 재료</h3>
 						<hr>
 						<ul style="padding-inline-start: 0px;">
-						<c:forEach var="data"  items="${ingredList}">
+						<c:forEach var="data" items="${ingredList}">
 							<li style="margin-left: 0px;">
 								<a id="${data.ino}" class="iList" href="#">
 								 	<em></em>
@@ -214,31 +195,22 @@ ul li{
 					</div>
 					<!-- 선택한 재료 띄워주는 곳 -->
 					<div style="margin: 20px;border: 1px solid;display: inline-block;height: 600px;float: left;width: 25%; ">
-						<dl>
-							<dt>
-								<h3>내가 선택한 재료</h3>
-							</dt>
-							<dd>
-								<ul class="selected-ingre">
-									<li class="no-content">재료를 선택해주세요.</li>
-								</ul>
-								<div class="btn">
-									<button type="submit">추천받기</button>
-								</div>
-							</dd>
-						</dl>
+						<h3>내가 선택한 재료</h3>
+					
 					</div>
 				</div>
 			</form>
 				<!-- 레시피 검색 결과 -->
-				<div class="" style="style="width:940px; height:1030px; border:1px solid;" >
+				<div class="" style="width:940px; height:1030px; border:1px solid;" >
 					<div class="tit_area">
 					<h2>조건에 맞는 레시피가 <strong>0개</strong>개 있습니다.</h2>
 						<div class="sort_area">
-							<select class="sort-selector" name="sort">
-								<option value="recent">최신순 정렬</option>
-								<option value="like">좋아요순 정렬</option>
-							</select>
+							<%-- <c:forEach> --%>
+							<div style="width:400px; height:500px; border:1px solid; float:left;">
+								<div style="width:400px; height: 400px;">
+								</div>
+							</div>
+							<%-- </c:forEach> --%>
 						</div>
 					</div>
 					<div>

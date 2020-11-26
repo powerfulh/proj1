@@ -12,10 +12,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <link rel="stylesheet" type="text/css" href="/fri/css/my.css">
-<script type="text/javascript" src="/fri/js/jquery.min.js"></script>
-<!--
-<script type="text/javascript" src="/fri/js/"></script>
--->
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="/fri/js/search.js"></script>
 <style>
 html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 div.dimension7{
@@ -84,14 +82,6 @@ ul li{
 }
 
 </style>
-<script type="text/javascript">
-	var num = $("#big_sort").find('button');
-	var cartAr;
-	$(function() {
-		$("#cart").html().append("<li>강냉이<img src='')></li>")
-		cartAr[] = '강냉이'
-	});
-</script>
 </head>
 <body class="">
 
@@ -143,7 +133,6 @@ ul li{
 			<div style="height:2000px">
 			<h2 style="text-align: center;">냉장고를 부탁해!</h2>
         	<h1 style="text-align: center;">냉장고에 잠자는 재료들로 레시피를 찾아보세요!</h1>
-        	<form action="/recipes" accept-charset="UTF-8" method="get">
         		<input name="utf8" type="hidden" value="">
 				<input type="hidden" name="sort" value="">
         		<div id="ckbox" style="border: 0px solid;">
@@ -168,13 +157,14 @@ ul li{
 	  			<!-- 버튼 선택 -->
 	  			<div style="text-align: center; display: inline-block;">
 		  			<div id="big_sort" style="width: 20%;margin: 20px;display: inline-block;height: 600px;float: left;">
-						<button>육류 </button>
-						<button>콩/두부 </button>
-						<button>채소류 </button>
-						<button>과일류 </button>
-						<button>해산물 </button>
-						<button>유제품 </button>
-						<button>면류 </button>
+						<button class="ingbtn1">육류 </button>
+						<button class="ingbtn2">콩,두부 </button>
+						<button class="ingbtn3">채소류 </button>
+						<button class="ingbtn4">과일류 </button>
+						<button class="ingbtn5">해산물 </button>
+						<button class="ingbtn6">조미료 </button>
+						<button class="ingbtn7">유제품 </button>
+						<button class="ingbtn8">면류 </button>
 					</div>
 					
 					<!-- 선택가능한 재료 띄워주는 곳 -->
@@ -182,13 +172,12 @@ ul li{
 						<h3>선택 가능한 재료</h3>
 						<hr>
 						<ul style="padding-inline-start: 0px;">
-						<c:forEach var="data" items="${ingredList}">
+						<c:forEach var="ingred" items="${LIST}">
 							<li style="margin-left: 0px;">
-								<a id="${data.ino}" class="iList" href="#">
-								 	<em></em>
-								 	<img src="/fri/img/cook/bread.png" alt="bread" />
-								 	<strong>빵</strong>
-								</a>
+								<div id="${ingred.ino}" class="iList w3-hide w3-button ${ingred.category}">
+								 	<img src="/fri/img/cook/${ingred.savename}" alt="${ingred.iname}" />
+								 	<strong>${ingred.iname}</strong>
+								</div>
 							</li>
 						</c:forEach>
 						</ul>
@@ -196,24 +185,23 @@ ul li{
 					<!-- 선택한 재료 띄워주는 곳 -->
 					<div style="margin: 20px;border: 1px solid;display: inline-block;height: 600px;float: left;width: 25%; ">
 						<h3>내가 선택한 재료</h3>
+						<div id="selected">
+						</div>
 					
 					</div>
 				</div>
-			</form>
 				<!-- 레시피 검색 결과 -->
 				<div class="" style="width:940px; height:1030px; border:1px solid;" >
 					<div class="tit_area">
 					<h2>조건에 맞는 레시피가 <strong>0개</strong>개 있습니다.</h2>
 						<div class="sort_area">
-							<select class="sort-selector" name="sort">
-								<option value="recent">최신순 정렬</option>
-								<option value="like">좋아요순 정렬</option>
-							</select>
-							
 							<%-- <c:forEach> --%>
-							<div style="width:400px; height 400px; border:1px solid; float:left;">
-								<div style="width">
-								</div>
+							<div style="width:400px; height:500px; border:1px solid; float:left;">
+								<a class="img_thumb" style="width:400px; height: 400px;">
+								<img src="">
+								</a>
+								<div style="width:400px; height 100px;">
+								
 							</div>
 							<%-- </c:forEach> --%>
 						</div>
