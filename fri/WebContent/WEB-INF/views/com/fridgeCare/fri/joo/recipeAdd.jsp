@@ -110,19 +110,24 @@ div.dimension8{
     </div>
     
 <!-- Middle Column --> <!-- 작업할 곳 -->
-
+	<!-- 레시피 테이블 : 이름, 종류, 재료, 영상주소, 조리시간, 상황/
+		 이미지테이블 : 업로드 이름, 파일크기, 경로/
+		 썸내일 테이블 : 경로, 이름
+		 보드 테이블 : 제목  /
+		 바디 테이블 : 내용 -->
     <div class="w3-col m9">
       <div class="w3-container w3-card w3-round w3-margin-bottom w3-margin-left w3-margin-right">
       <!-- 이곳에 꿈과 희망을 펼치세요 -->
      	 <div class="w3-content w3-center w3-indigo w3-card-4">
     	     <h1 class="w3-padding w3-margin-top w3-center">냉장고를 부탁해</h1>
     	  </div>
-      <form method="POST" action="/fri/recipeAddProc.fri" id="frm" name="frm">
+<c:if test="${ADDCNT eq 0}">
+      <form method="POST" action="/fri/recipeAddProc.fri" id="frm" name="frm" encType="multipart/form-data">
 	      <div class="m6 w3-col w3-padding w3-margin-bottom">
 	            <label class="w3-col w3-left-align w3-padding txt16 clsbold">요 리 이 름 : </label>
-	                  <input type="text" class="w3-input w3-border w3-padding" id=name" name="name" placeholder="내용을 입력하세요!">
-	            <label class="w3-col w3-left-align w3-padding txt16 clsbold">요 리 종 류 : </label>
-	               <select name="cate" id="cate" >
+	            <input type="text" class="w3-input w3-border w3-padding" id="name" name="name" placeholder="내용을 입력하세요!">
+	            <label class="w3-col w3-padding txt16 clsbold">요 리 종 류</label> 
+	               <select class="w3-col m7 txt14"name="cate" id="cate" >
 	                  <option value="#">선택
 	                  <option value="한">한식
 	                  <option value="중">중식
@@ -130,26 +135,26 @@ div.dimension8{
 	                  <option value="양">양식
 	                  <option value="퓨">퓨전
 	               </select> <br>
-	            <label class="w3-col w3-left-align w3-padding txt16 clsbold">소 요 시 간 : </label>
-	               <select name="time" id="time" >
+	            <label class="w3-col w3-padding txt16 clsbold">소 요 시 간</label> 
+	               <select class="w3-col m7 txt14" name="time" id="time" >
 	                  <option value="10">5~15분
 	                  <option value="20">15~25분
 	                  <option value="35">25~45분
 	                  <option value="50">45~60분
 	                  <option value="80">한시간 이상
 	               </select> <br>
-	            <label class="w3-col w3-left-align w3-padding txt16 clsbold">조 리 상 황 : </label>
-	             	<select name="situat" id="situat" >
+	            <label class="w3-col w3-padding txt16 clsbold">조 리 상 황 </label>
+	               <select class="w3-col m5 txt14" name="situat" id="situat" >
 		                <option value="자취">자취요리
 		                <option value="연인">연인코스
 		                <option value="안주">술안주
 		                <option value="반찬">집반찬
 		                <option value="든든">든든하게
-		             </select>
+		            </select>
 	         </div>
 	         <div class="m6 w3-col w3-padding w3-margin-bottom">
 	         	<div class="m3 w3-margin w3-padding">
-		     		<img src="#" class="w3-border" style="height: 218px; width: 350px;" >
+		     	<input type="file" id="thumb" name="thumb" value="썸내일 선택">
 		     	</div>
 	         </div>
 		     <div class="w3-col w3-padding w3-margin-top">
@@ -157,37 +162,51 @@ div.dimension8{
 		     		<div class="w3-col">
 			    		<label for="name" class="w3-col l4 m12 s12 w3-left-align w3-padding txt16 clsbold">필 수 재 료 : </label>
 		     		</div>
-		     		<div class="w3-col">
+		     		<div class="w3-col" id="plus">
 			        	<div class="w3-col m5 w3-padding">
 			            	<input type="text" class="w3-col w3-border w3-margin w3-padding" id="ingre" name="ingre" placeholder="예) 소고기, 돼지고기...">
 			            	<input type="button" class="w3-center m2" id="inbtn" value=" + 항목추가">
 			            </div>
-		    	     	<div class="w3-col m7 w3-padding">
-			    	 		<div class="">
-			    	 			<input class="w3-col w3-margin-top w3-border" name="video" placeholder="video">
-			    	 		</div>
-			    	 	</div>
 		     		</div>
+	    	     	<div class="w3-col m7 w3-padding">
+		    	 		<div class="">
+		    	 			<input class="w3-col w3-margin-top w3-border" name="video" placeholder="video">
+		    	 		</div>
+		    	 	</div>
 	         	</div>
 	       	</div>
+		     
+		     <div class="w3-col w3-center w3-margin-top w3-margin-bottom">
+		       	<input type="button" class="w3-center m4 w3-blue txt16 clsbold" style="height: 50px; width: 300px;" id="sabtn1" value="저장">
+		     </div>
+	       </form>
+</c:if>
+<c:if test="${ADDCNT eq 1}">
+      <form method="POST" action="/fri/recipeAddProc2.fri" id="frm1" name="frm1" encType="multipart/form-data">
 	       	<div class="w3-col w3-padding w3-margin-top">
 		     	<div class="w3-col w3-margin-top"> 
 		     		<div class="w3-col">
-			    		<label id="make" class="w3-col l4 m12 s12 w3-left-align w3-padding txt16 clsbold">조 리 과 정: </label>
+			      		<label class="w3-col w3-left-align w3-padding txt16 clsbold">게시글 제목 : </label>
+			            <input type="text" class="w3-input w3-border w3-padding" id="board" name="board" placeholder="내용을 입력하세요!">
 		     		</div>
-		     		<div class="w3-col m4">
-		     			<img src="#" class="w3-border w3-margin-bottom" style="height: 200px; width: 200px;" >
+		     		<div class="w3-col">
+			    		<label id="make" class="w3-col l4 m12 s12 w3-left-align w3-padding txt16 clsbold">조 리 과 정: </label>
 		     		</div>
 		     		<div class="w3-col m8">
 						<textarea id="cook" class="w3-col w3-border w3-input w3-margin-bottom" rows="8" placeholder="조리과정 설명" style="overflow: auto; resize: none;"></textarea>
 		     		</div>
+		     		<div class="w3-col m4">
+			     		<input type="file" id="image" name="image" value="사진 선택">
+			     		<img src="" id="iImg" width="80px" height="80px">
+		     		</div>
 		     	</div>
+            	<input type="button" class="w3-center m2" id="inbtn" value=" + 항목추가">
 		     </div>
 	     </form>
-	     
-	     <div class="w3-col w3-center">
-	       	<input type="button" class="w3-center m4 w3-blue txt16 clsbold" style="height: 50px; width: 300px;" id="sabtn" value="저장">
+	     <div class="w3-col w3-center w3-margin-top w3-margin-bottom">
+	       	<input type="button" class="w3-center m4 w3-blue txt16 clsbold" style="height: 50px; width: 300px;" id="sabtn2" value="저장">
 	     </div>
+</c:if>
     </div>
     <!-- End Middle Column -->
     </div>
