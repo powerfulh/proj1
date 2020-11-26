@@ -4,20 +4,49 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 
 
-public class searchVO {
-	private int ino, iname, lcount, bno, wmno, tno;
-	private String category, imgdir, title, tname, tmno, thumdir, rdate;
-	private Date wdate;
+public class SearchVO {
+	private int ino, lcount, bno, wmno, tno, time;
+	private String ingred,iname, category, imgdir, title, tname, tmno, thumdir, mdir, bdir, savename;
+	public String getSavename() {
+		return savename;
+	}
+	public void setSavename(String savename) {
+		this.savename = savename;
+	}
+	public String getMdir() {
+		return mdir;
+	}
+	public void setMdir(String mdir) {
+		this.mdir = mdir;
+	}
+	public String getBdir() {
+		return bdir;
+	}
+	public void setBdir(String bdir) {
+		this.bdir = bdir;
+	}
+	public String getIngred() {
+		return ingred;
+	}
+	public void setIngred(String ingred) {
+		this.ingred = ingred;
+	}
 	public int getIno() {
 		return ino;
 	}
 	public void setIno(int ino) {
 		this.ino = ino;
 	}
-	public int getIname() {
+	public int getTime() {
+		return time;
+	}
+	public void setTime(int time) {
+		this.time = time;
+	}
+	public String getIname() {
 		return iname;
 	}
-	public void setIname(int iname) {
+	public void setIname(String iname) {
 		this.iname = iname;
 	}
 	public int getLcount() {
@@ -79,16 +108,5 @@ public class searchVO {
 	}
 	public void setThumdir(String thumdir) {
 		this.thumdir = thumdir;
-	}
-	public Date getWdate() {
-		return wdate;
-	}
-	public void setWdate(Date wdate) {
-		this.wdate = wdate;
-	}
-	public void setWdate() {
-		SimpleDateFormat form1 = new SimpleDateFormat("YY/MM/dd");
-		rdate = form1.format(wdate);
-	}
-	
+	}	
 }
