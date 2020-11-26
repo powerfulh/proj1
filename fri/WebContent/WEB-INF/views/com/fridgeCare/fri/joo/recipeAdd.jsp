@@ -44,7 +44,11 @@ div.dimension8{
 </style>
 </head>
 <body class="">
-
+<c:if test="${empty SID}">
+	<script type="text/javascript">
+		location.href = '/fri/';
+	</script>
+</c:if>
 
 <!-- Page Container -->
 <div class="w3-container w3-content" style="max-width:1400px;margin-top:20px">    

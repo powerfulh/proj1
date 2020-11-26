@@ -14,4 +14,8 @@ $(function(){
 	if(parameter == 'fail'){
 		alert(parameter);
 	}
+	$('.latelyuploadbtn').click(function(){
+		$(this).submit();
+	});
+	// 랭킹 누르면 가는 작업 해야됨
 });

@@ -145,7 +145,7 @@ body{
 			</form>
 		</c:if>
 		<div class="w3-blue w3-round-large w3-center dimension7 w3-padding w3-margin-top">HQ refri</div>
-		<form action="/fri/partnerboard.fri" method="get">
+		<form action="/fri/partnerBoard.fri" method="get">
 			<input class="w3-gray w3-round-large w3-center dimension3 w3-padding-small inline w3-button w3-hover-cyan change05bgc" type="submit" value="파트너 레시피 보기">
 		</form>
 		<div class="w3-teal w3-round-large w3-center dimension7 w3-padding w3-margin-top w3-button w3-hover-cyan change05bgc">Feedback / Q &amp; A</div>

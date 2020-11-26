@@ -89,7 +89,7 @@ ul li{
 <!-- Page Container -->
 <div class="w3-container w3-content" style="max-width:1400px;margin-top:20px">    
 	<div class="w3-col w3-card w3-margin-bottom w3-round">
-		<h1>대충 이곳엔 로고가 들어갈거임</h1>
+		<h1><a href="/fri/main.fri">냉장고를 부탁해!</a></h1>
 	</div>
   <!-- The Grid -->
   <div class="w3-row">

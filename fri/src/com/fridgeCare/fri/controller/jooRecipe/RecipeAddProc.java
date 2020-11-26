@@ -22,6 +22,7 @@ public class RecipeAddProc implements Caller {
 		String id = (String)req.getSession().getAttribute("SID");
 		
 		String path = req.getSession().getServletContext().getRealPath("WEB-INF/resources/img/thumb");
+		System.out.println("#### path : " + path);
 		ResipeAddVO rVO = new ResipeAddVO();
 		RecipeAddDao rDao = new RecipeAddDao();
 		try {
@@ -48,6 +49,7 @@ public class RecipeAddProc implements Caller {
 			req.setAttribute("ADDCNT", cnt);
 			req.setAttribute("VIEW", "/fri/recipeAdd.fri");
 			req.setAttribute("isRedirect", true);
+			view = "/fri/recipeAdd.fri";
 			
 			if(cnt == 0) {
 				return view;

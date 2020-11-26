@@ -37,16 +37,12 @@ div.dimension8{
 <body class="">
 
 
-<!-- Navbar on small screens -->
-<div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
-  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
-</div>
 
 <!-- Page Container -->
 <div class="w3-container w3-content" style="max-width:1400px;margin-top:20px">    
+	<div class="w3-col w3-card w3-margin-bottom w3-round">
+		<h1><a href="/fri/main.fri">냉장고를 부탁해!</a></h1>
+	</div>
   <!-- The Grid -->
   <div class="w3-row">
     <!-- Left Column -->
