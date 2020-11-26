@@ -5,11 +5,19 @@ import java.sql.Time;
 import java.text.SimpleDateFormat;
 
 public class PartnerVO {
-	private int cnt, lcount;
+	private int cnt, lcount, bno;
 	private String id, sdate, title ,bdir ,mdir ;
 	private Date wdate;
 	private Time wtime;
 	
+
+	public int getBno() {
+		return bno;
+	}
+
+	public void setBno(int bno) {
+		this.bno = bno;
+	}
 
 	public int getCnt() {
 		return cnt;

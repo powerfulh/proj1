@@ -79,6 +79,7 @@ public class PartnerDao {
 					pVO.setId(rs.getString("id"));
 					pVO.setMdir(rs.getString("mdir"));
 					pVO.setBdir(rs.getString("bdir"));
+					pVO.setBno(rs.getInt("bno"));
 					
 					list.add(pVO);
 				}else {
@@ -111,6 +112,25 @@ public class PartnerDao {
 		db.close(rs);
 		db.close(stmt);
 		db.close(con);
+		return cnt;
+	}
+	
+	// 조회수 증가 전담 처리 함수
+	public int getInsertCnt(int bno) {
+		int cnt = 0;
+		con = db.getCon();
+		String sql = pSQL.getSQL(pSQL.UPDATE_CNT);
+		pstmt = db.getPSTMT(con, sql);
+		try {
+			pstmt.setInt(1, bno);
+			
+			cnt = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(pstmt);
+			db.close(con);
+		}
 		return cnt;
 	}
 }

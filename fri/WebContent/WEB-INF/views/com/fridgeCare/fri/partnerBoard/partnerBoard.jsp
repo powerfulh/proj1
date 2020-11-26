@@ -13,7 +13,7 @@
 
 <link rel="stylesheet" type="text/css" href="/cls/css/my.css">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript" src="/fri/js/resipiPage.js"></script>
+<script type="text/javascript" src="/fri/js/partnerBoard.js"></script>
 
 <style>
 html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
@@ -136,9 +136,11 @@ span.activepage{
     <!-- Middle Column --> <!-- 작업할 곳 -->
     <div class="w3-col m9">
       
-      	<div class="w3-container w3-card w3-round w3-margin-bottom w3-margin-left w3-margin-right w3-border">
+      	<form method="POST" action="/fri/partnerBoardProc.fri" class="w3-container w3-card w3-round w3-margin-bottom w3-margin-left w3-margin-right w3-border" id="frm">
+    		<input type="hidden" name="bno" id="bno">
       		<c:forEach var="board" items="${BOARD}">
-			<div class="w3-col m11 w3-border-bottom w3-button w3-margin-left w3-margin-top w3-margin-bottom">
+      		
+			<div class="w3-col m11 w3-border-bottom w3-button w3-margin-left w3-margin-top w3-margin-bottom btn">
 				<div class="w3-col w3-border">
 					<div class="w3-col m3">
 						<img style="width: 100%" src="/fri${board.bdir}">
@@ -158,8 +160,9 @@ span.activepage{
 					</div>
 				</div>
 			</div>
+			<span class="w3-hide">${board.bno}</span>
       		</c:forEach>
-      	</div>
+      	</form>
       
       <form method="get" action="/fri/partnerBoard.fri" class="w3-margin inline" id="pageform">
 		<input type="hidden" name="nowPage" id="whatpage">
