@@ -11,10 +11,10 @@
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<link rel="stylesheet" type="text/css" href="/fridgeCare/css/my.css">
-<script type="text/javascript" src="/fridgeCare/js/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/fri/css/my.css">
+<script type="text/javascript" src="/fri/js/jquery.min.js"></script>
 <!--
-<script type="text/javascript" src="/fridgeCare/js/"></script>
+<script type="text/javascript" src="/fri/js/"></script>
 -->
 <style>
 html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
@@ -128,7 +128,7 @@ ul li{
       <div class="w3-card w3-round w3-white">
         <div class="w3-container">
          <h4 class="w3-center">My Profile</h4>
-         <p class="w3-center"><img src="/fridgeCare/img/avatar/m3.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+         <p class="w3-center"><img src="/fri/img/avatar/m3.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
          <hr>
          <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> ID</p>
          <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> Loc</p>
@@ -159,7 +159,7 @@ ul li{
     <!-- 작업할 곳 -->
     <div class="w3-col m9">
       <div class="w3-container w3-card w3-round w3-margin-bottom w3-margin-left w3-margin-right" style="background-color: #E8EAEE;">
-			<div style="height:1000px">
+			<div style="height:2000px">
 			<h2 style="text-align: center;">냉장고를 부탁해!</h2>
         	<h1 style="text-align: center;">냉장고에 잠자는 재료들로 레시피를 찾아보세요!</h1>
         	<form action="/recipes" accept-charset="UTF-8" method="get">
@@ -168,7 +168,7 @@ ul li{
         		<div id="ckbox" style="border: 0px solid;">
 					<div class="field1" style="margin: 10px; vertical-align: middle; border: 1px solid; text-align: justify; text-align: center;">
 						<input type="text" class="search-ingre" placeholder="음식명으로 검색해보세요!" style="border: 0px solid; display: inline-block; width: calc(100% - 80px); font-size: 30px; vertical-align: middle;">
-						<button style=""><img src="/fridgeCare/img/cook/search.png"></button>
+						<button style=""><img src="/fri/img/cook/search.png"></button>
 	        		</div>
 	        		<div style="background-color: #fff; margin: 10px; padding: 10px;">
 	        			<h3 style="text-align: center;">상황에 맞는 음식</h3>
@@ -184,6 +184,7 @@ ul li{
 		  				</div>
 	  				</div>
 	  			</div>
+	  			<!-- 버튼 선택 -->
 	  			<div style="text-align: center; display: inline-block;">
 		  			<div id="big_sort" style="width: 20%;margin: 20px;display: inline-block;height: 600px;float: left;">
 						<button>육류 </button>
@@ -194,53 +195,28 @@ ul li{
 						<button>유제품 </button>
 						<button>면류 </button>
 					</div>
-					<!-- 선택가능한 재료 -->
+					
+					<!-- 선택가능한 재료 띄워주는 곳 -->
 					<div class="small_sort" style="width: 42%; margin: 20px; display: inline-block; height: 600px; float:left;">
 						<h2>선택 가능한 재료</h2>
 						<hr>
 						<ul style="padding-inline-start: 0px;">
+						<c:forEach var="data"  items="${ingredList}">
 							<li style="margin-left: 0px;">
-								<a ingre_id="71" href="javascript:;">
+								<a id="${data.ino}" class="iList" href="#">
 								 	<em></em>
-								 	<img src="/fridgeCare/img/cook/bread.png" alt="bread" />
+								 	<img src="/fri/img/cook/bread.png" alt="bread" />
 								 	<strong>빵</strong>
 								</a>
 							</li>
-							<li style="margin-left: 0px;">
-								<a ingre_id="72" href="javascript:;">
-								 	<em></em>
-								 	<img src="/fridgeCare/img/cook/apple.png" alt="apple" />
-								 	<strong>사과</strong>
-								</a>
-								</li>
-							<li style="margin-left: 0px;">
-								<a ingre_id="73" href="javascript:;">
-								 	<em></em>
-								 	<img src="/fridgeCare/img/cook/chicken.png" alt="chicken" />
-								 	<strong>닭</strong>
-								</a>
-							</li>
-							<li style="margin-left: 0px;">
-								<a ingre_id="74" href="javascript:;">
-								 	<em></em>
-								 	<img src="/fridgeCare/img/cook/meat.png" alt="meat" />
-								 	<strong>고기</strong>
-								</a>
-							</li>
-							<li style="margin-left: 0px;">
-								<a ingre_id="75" href="javascript:;">
-								 	<em></em>
-								 	<img src="/fridgeCare/img/cook/noodle.png" alt="noodle" />
-								 	<strong>라면</strong>
-								</a>
-							</li>
+						</c:forEach>
 						</ul>
 					</div>
-					<!-- 조리 가능한 레시피 -->
+					<!-- 선택한 재료 띄워주는 곳 -->
 					<div style="margin: 20px;border: 1px solid;display: inline-block;height: 600px;float: left;width: 25%; ">
 						<dl>
 							<dt>
-								<h3>조리 가능한 레시피</h3>
+								<h3>내가 선택한 재료</h3>
 							</dt>
 							<dd>
 								<ul class="selected-ingre">
@@ -253,7 +229,22 @@ ul li{
 						</dl>
 					</div>
 				</div>
-			</form>			
+			</form>
+				<!-- 레시피 검색 결과 -->
+				<div class="" style="style="width:940px; height:1030px; border:1px solid;" >
+					<div class="tit_area">
+					<h2>조건에 맞는 레시피가 <strong>0개</strong>개 있습니다.</h2>
+						<div class="sort_area">
+							<select class="sort-selector" name="sort">
+								<option value="recent">최신순 정렬</option>
+								<option value="like">좋아요순 정렬</option>
+							</select>
+						</div>
+					</div>
+					<div>
+						
+					</div>
+				</div>			
 			</div>
      	 </div>
 		</div>

@@ -5,13 +5,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.fridgeCare.fri.controller.Caller;
 
-public class SelectIngredient implements Caller {
+public class Search implements Caller {
 
 	@Override
 	public String exec(HttpServletRequest req, HttpServletResponse resp) {
-		String view = "selectIngredient";
+		String view = "search";
 		String parameter1 = req.getParameter("category");
-		//현욱이형 파이팅
 		return view;
 	}
 }
