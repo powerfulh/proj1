@@ -4,7 +4,6 @@ import java.sql.*;
 import com.fridgeCare.fri.sql.*;
 import com.fridgeCare.fri.vo.*;
 
-
 import db.*;
 
 public class SearchDao {
