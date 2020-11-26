@@ -1,0 +1,14 @@
+### 레시피 추가 뷰 요청 
+요청내용 	: /fri/recipe/recipeAdd.fri
+파라미터 	: 무
+컨트롤러 	: com.fridgeCare.fri.controller.jooRecipe.RecipeAdd
+뷰		: /WEB-INF/views/com/fridgeCare/fri/joo/recipeAdd.jsp
+-------------------------------------------------------------------------------
+### 레시피 추가 처리 요청 
+요청내용 	: /fri/recipe/recipeAddProc.fri
+파라미터 	: title, category, ftime, ingred, video, situat
+컨트롤러 	: com.fridgeCare.fri.controller.jooRecipe.RecipeAddProc
+뷰		: redirect ] 
+					성공 : /fri/recipe/resipiPage.fri
+					실패 : /fri/recipe/recipeAdd.fri
+-------------------------------------------------------------------------------
