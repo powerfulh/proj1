@@ -2,6 +2,7 @@ package com.fridgeCare.fri.sql;
 
 public class PartnerSQL {
 	public final int SEL_BOARD_INFO = 1001;
+	public final int SEL_BOARD_Count = 1002;
 	
 	
 	public String getSQL(int code) {
@@ -15,7 +16,11 @@ public class PartnerSQL {
 			buff.append("WHERE ");
 			buff.append("    wmno = mno ");
 			buff.append("    AND b.tno = imgno ");
-			buff.append("    AND mno = m.tmno ");
+			buff.append("    AND mno = m.tmno and grade = 10");
+			break;
+		case SEL_BOARD_Count:
+			buff.append("select count(*) from board , member ");
+			buff.append("where board.wmno = member.mno and grade = 10");
 			break;
 		
 		}
