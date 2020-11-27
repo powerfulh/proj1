@@ -1,0 +1,70 @@
+메인 페이지 요청
+요청주소 : /main.fri
+컨트롤러 : com.fridgeCare.fri.controller.member.Bring
+파라미터 : 없음
+뷰 : WEB-INF/views/com/fridgeCare/fri/main.jsp
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+회원가입 페이지 요청
+요청주소 : /joinpage.fri
+컨트롤러 : com.fridgeCare.fri.controller.member.Joinpage
+파라미터 : 없음
+뷰 : WEB-INF/views/com/fridgeCare/fri/member/joinpage.jsp
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+아이디 중복검사 요청
+요청주소 : /idCheck.fri
+컨트롤러 : com.fridgeCare.fri.controller.member.IdCheck
+파라미터 : id
+뷰 : X
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+메일 중복검사 요청
+요청주소 : /mailCheck.fri
+컨트롤러 : com.fridgeCare.fri.controller.member.MailCheck
+파라미터 : mail
+뷰 : X
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+신규 회원가입 요청
+요청주소 : /joinproc.fri
+컨트롤러 : com.fridgeCare.fri.controller.member.JoinProc
+파라미터 : 아이디 비번 등등
+뷰 : WEB-INF/views/com/fridgeCare/fri/main.jsp (성공)
+WEB-INF/views/com/fridgeCare/fri/member/joinpage.jsp (실패)
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+로그아웃 요청
+요청주소 : /logout.fri
+컨트롤러 : com.fridgeCare.fri.controller.member.Logout
+파라미터 : 없음
+뷰 : WEB-INF/views/com/fridgeCare/fri/main.jsp
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+로그인 요청
+요청주소 : /logincheck.fri
+컨트롤러 : com.fridgeCare.fri.controller.member.LoginCheck
+파라미터 : ID , pw
+뷰 : WEB-INF/views/com/fridgeCare/fri/main.jsp
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+파트너 보드 리스트 요청
+요청주소 : /partnerboard.fri
+컨트롤러 : com.fridgeCare.fri.controller.board.PartnerBoard
+파라미터 : 없음
+뷰 : WEB-INF/views/com/fridgeCare/fri/partnerBoard/partnerBoard.jsp
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+재료선택 페이지 요청
+요청주소 : /search.fri
+컨트롤러 : com.fridgeCare.fri.controller.search.Search
+파라미터 : category
+뷰 : WEB-INF/views/com/fridgeCare/fri/(미정)
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+유저 레시피 작성페이지 요청
+요청주소 : /recipeAdd.fri
+컨트롤러 : com.fridgeCare.fri.controller.jooRecipe.RecipeAdd
+파라미터 : X
+뷰 : WEB-INF/views/com/fridgeCare/fri/(미정)
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ

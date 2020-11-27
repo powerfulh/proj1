@@ -1,0 +1,9 @@
+# 정현욱 요청설계
+
+회원가입 페이지 요청
+요청주소 : /increpas4Team/selectIngredient.fri
+파라미터 없음
+컨트롤러 : controller.select
+뷰 : /WEB-INF/views/selectIngredient.fri
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
