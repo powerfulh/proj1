@@ -14,7 +14,7 @@
 
  
 <%-- 
-<!-- 이곳은 인덱스 입니다 수정전 팀원과 상의하세요 -->
+<!-- 이곳은 인덱스 입니다 수정전 팀원과 상의하세요 무언가 변경-->
 <div class="w3-container w3-content" style="max-width:1400px;margin-top:20px">
 	<div class="w3-col w3-card w3-margin-bottom w3-round">
 		<h1><a href="/increpas4team/">냉장고를 부탁해!</a></h1>
